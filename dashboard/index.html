@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blood Cell Detection</title>
+  <link rel="stylesheet" href="assets/theme.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <h1>Blood cell detection <span class="small" style="font-weight:400">YOLO26 fine-tuning</span></h1>
+      <div class="tabs" role="tablist" aria-label="Dashboard sections">
+        <button class="tab" role="tab" data-tab="training" aria-selected="true">Training</button>
+        <button class="tab" role="tab" data-tab="performance" aria-selected="false">Performance</button>
+        <button class="tab" role="tab" data-tab="dataset" aria-selected="false">Dataset</button>
+      </div>
+      <div class="spacer"></div>
+      <span id="status-chip" class="chip idle" role="status"></span>
+      <span id="updated" class="small"></span>
+      <button id="theme-btn" class="ghost-btn" type="button">Dark theme</button>
+    </div>
+  </header>
+  <main class="wrap">
+    <section id="tab-training" role="tabpanel"></section>
+    <section id="tab-performance" role="tabpanel" hidden></section>
+    <section id="tab-dataset" role="tabpanel" hidden></section>
+  </main>
+  <script src="data/static.js"></script>
+  <script src="assets/charts.js"></script>
+  <script src="assets/sections.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>

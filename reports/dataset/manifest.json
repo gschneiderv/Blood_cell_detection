@@ -1,0 +1,246 @@
+{
+ "source": "TXL-PBC (data/TXL-PBC)",
+ "names": [
+  "WBC",
+  "RBC",
+  "Platelets"
+ ],
+ "per_split": {
+  "train": {
+   "images": 851,
+   "dropped": 31,
+   "cells": 11958,
+   "per_class": {
+    "0": 871,
+    "1": 10714,
+    "2": 373
+   }
+  },
+  "val": {
+   "images": 250,
+   "dropped": 2,
+   "cells": 3694,
+   "per_class": {
+    "0": 255,
+    "1": 3327,
+    "2": 112
+   }
+  },
+  "test": {
+   "images": 126,
+   "dropped": 0,
+   "cells": 1868,
+   "per_class": {
+    "0": 131,
+    "1": 1688,
+    "2": 49
+   }
+  }
+ },
+ "duplicate_label_rows_removed": {
+  "train": 19,
+  "val": 15,
+  "test": 13
+ },
+ "excluded_images": {
+  "train/0e40a35b91ac5eefbfe6c2355229a958": {
+   "kept_split": "val",
+   "kept": [
+    "val/a99aec5895ea59748c82e082cfcc7909"
+   ]
+  },
+  "train/124aa27dc8e3509ead5e81ed784912d7": {
+   "kept_split": "val",
+   "kept": [
+    "val/21c339f6431059bda98684e98d300d6e"
+   ]
+  },
+  "train/3706880e7e2d55e581da3172b191530b": {
+   "kept_split": "val",
+   "kept": [
+    "val/9bc611f833215828856da7dd4ca86b01"
+   ]
+  },
+  "train/3d07f563f41d569bb6b50ca695aae52f": {
+   "kept_split": "val",
+   "kept": [
+    "val/1877ecbbcd8b5b9eabf534aaf3f583e3"
+   ]
+  },
+  "train/46fa7c58d6525ad48f13c95dc5f7d1ef": {
+   "kept_split": "test",
+   "kept": [
+    "test/cdac4a90403b5660b922d4a291140239"
+   ]
+  },
+  "train/4f0da894f16a5844863d7d56d76389c9": {
+   "kept_split": "val",
+   "kept": [
+    "val/203cb839189d58eb8c2d178d5da18759"
+   ]
+  },
+  "train/5446c49284635ab8945aea99bad16da7": {
+   "kept_split": "val",
+   "kept": [
+    "val/ddb2ed8deb3659f699567efec71e6182"
+   ]
+  },
+  "train/5b78af42ebc25be6b8aacaa3b29b5d62": {
+   "kept_split": "test",
+   "kept": [
+    "test/2c0ccbbb09be55b3af120c02b4d5706e"
+   ]
+  },
+  "train/5fd60d29ae4e51e8a772c4b9c14bb40d": {
+   "kept_split": "test",
+   "kept": [
+    "test/2c0ccbbb09be55b3af120c02b4d5706e"
+   ]
+  },
+  "train/889b3b43cf1b5d008867d79326330d14": {
+   "kept_split": "test",
+   "kept": [
+    "test/2c0ccbbb09be55b3af120c02b4d5706e"
+   ]
+  },
+  "train/627afa90a80850ad8bac566e2c52e69f": {
+   "kept_split": "test",
+   "kept": [
+    "test/a9e09a6df4a85113b5003c6749236a26"
+   ]
+  },
+  "train/682cea6e8b4e58539a4204ec7bb3dcb7": {
+   "kept_split": "val",
+   "kept": [
+    "val/5aa8095227e65830960477c329b24964"
+   ]
+  },
+  "train/7250a44a12d053e38ef5ef99feb3ce56": {
+   "kept_split": "val",
+   "kept": [
+    "val/825ff0456113567da3630ed8fb75c266"
+   ]
+  },
+  "train/759ce245b9785759a381adec77ddf0db": {
+   "kept_split": "test",
+   "kept": [
+    "test/408956b07ab15b499e9d93a4cadf0afc"
+   ]
+  },
+  "train/796a64020a9e5b5d8c3fca6b5ce5bf96": {
+   "kept_split": "val",
+   "kept": [
+    "val/20723236a89850f295e6d06759de2e5a"
+   ]
+  },
+  "train/798b61db3ea95214b6dedb1cc94ffb31": {
+   "kept_split": "val",
+   "kept": [
+    "val/969b2db8c7d1532cad5fd7d46f98ed0e"
+   ]
+  },
+  "train/9120869d87065920a79bff587f50fc4b": {
+   "kept_split": "val",
+   "kept": [
+    "val/43b564f146135e47a0bcb6bed75c1e67"
+   ]
+  },
+  "train/92e8141342025f94ae7933e04370db2d": {
+   "kept_split": "val",
+   "kept": [
+    "val/675f754f8e6e547d81b851fd03c4c735"
+   ]
+  },
+  "train/9b74b5e71ce75023bb428c04854f01ab": {
+   "kept_split": "val",
+   "kept": [
+    "val/240ce108771b5f4eae322c27a0c6bbbf"
+   ]
+  },
+  "train/9e0904cb31d856ed8c8ca171bebab658": {
+   "kept_split": "test",
+   "kept": [
+    "test/eb735b6f8eb85029881ac913f6793644"
+   ]
+  },
+  "train/b9a2a0048ebd585794f6a1da21153506": {
+   "kept_split": "test",
+   "kept": [
+    "test/eef539ef286e50e3888796e27c391b89"
+   ]
+  },
+  "train/bbffef8d43b7534ead78cfe1f6817376": {
+   "kept_split": "val",
+   "kept": [
+    "val/4497952a44e25f0a973944f53c350a02"
+   ]
+  },
+  "train/c0f49f1ba64e511587d7f620c1b061db": {
+   "kept_split": "val",
+   "kept": [
+    "val/4156c90548ee503e98cb2bf947312eff"
+   ]
+  },
+  "train/d2373fd9dec55f5bb9b3f27e296ed174": {
+   "kept_split": "test",
+   "kept": [
+    "test/0c4de1877622533984edd9e5e3108a78"
+   ]
+  },
+  "train/d382f9eee65d5841b214c77f392dbdb5": {
+   "kept_split": "val",
+   "kept": [
+    "val/f6677baea18352ccbb9c6d31991feac4"
+   ]
+  },
+  "train/d48da6cf0e835fdcab4f7d29afdced57": {
+   "kept_split": "val",
+   "kept": [
+    "val/aef49fb586725cfc87be32ded35a9b96"
+   ]
+  },
+  "train/d4fe81d8006a59d7a63a973f4fe92e6c": {
+   "kept_split": "val",
+   "kept": [
+    "val/5561e914b2a0556ab8bd0d9406abec59"
+   ]
+  },
+  "train/d7f198a3200a5c2f9ca9f2ed32bc949e": {
+   "kept_split": "val",
+   "kept": [
+    "val/80b070043fd158dd8ae36060618c7f34"
+   ]
+  },
+  "train/de4e9c6117185616bfe1bbfee4423b75": {
+   "kept_split": "val",
+   "kept": [
+    "val/3d7cae6484ce5bdb97997d71d4c423cd"
+   ]
+  },
+  "train/e08905a8a3af58ce98422d9d2e5bf418": {
+   "kept_split": "test",
+   "kept": [
+    "test/13cd097a957e573b84aee503a173dd94"
+   ]
+  },
+  "train/fb86c7f4144652259f8c77811cc6b4e2": {
+   "kept_split": "test",
+   "kept": [
+    "test/13cd097a957e573b84aee503a173dd94"
+   ]
+  },
+  "val/6f43b3fe685851e684bc3267a50c5826": {
+   "kept_split": "test",
+   "kept": [
+    "test/f4f0852a4bcc5a128b1379ae940683f0"
+   ]
+  },
+  "val/afc0de2067c550de865774b235f69487": {
+   "kept_split": "test",
+   "kept": [
+    "test/cee3bdf7b7485d84a1f3e27953f4fa00"
+   ]
+  }
+ },
+ "exclusion_rule": "A field of view may only appear in one split; priority test > val > train."
+}

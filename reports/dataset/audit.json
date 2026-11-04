@@ -1,0 +1,355 @@
+{
+  "dataset": "data/TXL-PBC",
+  "names": [
+    "WBC",
+    "RBC",
+    "Platelets"
+  ],
+  "yaml": {
+    "train": "./images/train/",
+    "val": "./images/val/",
+    "test": "./images/test/",
+    "nc": 3,
+    "names": [
+      "WBC",
+      "RBC",
+      "Platelets"
+    ]
+  },
+  "totals": {
+    "images": 1260,
+    "cells": 18143,
+    "per_class": {
+      "WBC": 1298,
+      "RBC": 16302,
+      "Platelets": 543
+    }
+  },
+  "per_split": {
+    "train": {
+      "images": 882,
+      "cells": 12510,
+      "per_class": {
+        "WBC": 908,
+        "RBC": 11220,
+        "Platelets": 382
+      },
+      "images_with_class": {
+        "WBC": 879,
+        "RBC": 882,
+        "Platelets": 245
+      },
+      "empty_label_images": 0,
+      "readme_images": 882,
+      "readme_cells": 12510
+    },
+    "val": {
+      "images": 252,
+      "cells": 3752,
+      "per_class": {
+        "WBC": 257,
+        "RBC": 3383,
+        "Platelets": 112
+      },
+      "images_with_class": {
+        "WBC": 250,
+        "RBC": 252,
+        "Platelets": 64
+      },
+      "empty_label_images": 0,
+      "readme_images": 252,
+      "readme_cells": 3752
+    },
+    "test": {
+      "images": 126,
+      "cells": 1881,
+      "per_class": {
+        "WBC": 133,
+        "RBC": 1699,
+        "Platelets": 49
+      },
+      "images_with_class": {
+        "WBC": 126,
+        "RBC": 126,
+        "Platelets": 34
+      },
+      "empty_label_images": 0,
+      "readme_images": 126,
+      "readme_cells": 1881
+    }
+  },
+  "integrity": {
+    "unreadable_images": [],
+    "images_without_label": [],
+    "labels_without_image": [],
+    "label_problems_count": 0,
+    "label_problems_by_kind": {},
+    "label_problems_sample": [],
+    "duplicate_box_files": 5,
+    "duplicate_boxes_total": 47
+  },
+  "image_stats": {
+    "modes": {
+      "RGB": 1160,
+      "RGBA": 100
+    },
+    "distinct_sizes": 5,
+    "top_sizes": [
+      {
+        "width": 575,
+        "height": 575,
+        "count": 500
+      },
+      {
+        "width": 360,
+        "height": 363,
+        "count": 486
+      },
+      {
+        "width": 640,
+        "height": 480,
+        "count": 160
+      },
+      {
+        "width": 256,
+        "height": 256,
+        "count": 100
+      },
+      {
+        "width": 366,
+        "height": 369,
+        "count": 14
+      }
+    ],
+    "alpha_images": 100,
+    "alpha_non_opaque": [],
+    "alpha_non_opaque_count": 0,
+    "cells_per_image": {
+      "min": 4,
+      "median": 14.0,
+      "mean": 14.4,
+      "p95": 23.0,
+      "max": 32
+    }
+  },
+  "box_size_stats": {
+    "WBC": {
+      "n": 1298,
+      "side_px_median": 184.1,
+      "side_at_640_p05": 177.2,
+      "side_at_640_median": 250.8,
+      "side_at_640_p95": 344.9,
+      "frac_under_32px_at_640": 0.0,
+      "frac_under_16px_at_640": 0.0
+    },
+    "RBC": {
+      "n": 16302,
+      "side_px_median": 86.9,
+      "side_at_640_p05": 88.6,
+      "side_at_640_median": 131.2,
+      "side_at_640_p95": 168.2,
+      "frac_under_32px_at_640": 0.0,
+      "frac_under_16px_at_640": 0.0
+    },
+    "Platelets": {
+      "n": 543,
+      "side_px_median": 33.5,
+      "side_at_640_p05": 33.4,
+      "side_at_640_median": 50.2,
+      "side_at_640_p95": 73.4,
+      "frac_under_32px_at_640": 0.0368,
+      "frac_under_16px_at_640": 0.0
+    }
+  },
+  "box_size_hist": {
+    "bin_centres": [
+      5.0,
+      15.0,
+      25.0,
+      35.0,
+      45.0,
+      55.0,
+      65.0,
+      75.0,
+      85.0,
+      95.0,
+      105.0,
+      115.0,
+      125.0,
+      135.0,
+      145.0,
+      155.0,
+      165.0,
+      175.0,
+      185.0,
+      195.0,
+      205.0,
+      215.0,
+      225.0,
+      235.0,
+      245.0,
+      255.0,
+      265.0,
+      275.0,
+      285.0,
+      295.0,
+      305.0,
+      315.0,
+      325.0,
+      335.0,
+      345.0,
+      355.0,
+      365.0,
+      375.0,
+      385.0,
+      395.0,
+      405.0
+    ],
+    "series": {
+      "WBC": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.00077,
+        0.0,
+        0.0,
+        0.00077,
+        0.00308,
+        0.00308,
+        0.00308,
+        0.01002,
+        0.01772,
+        0.0208,
+        0.03236,
+        0.03929,
+        0.05932,
+        0.07704,
+        0.07473,
+        0.07319,
+        0.07781,
+        0.05701,
+        0.06086,
+        0.05855,
+        0.07011,
+        0.05239,
+        0.0547,
+        0.04006,
+        0.03005,
+        0.02234,
+        0.01541,
+        0.01772,
+        0.01002,
+        0.0077,
+        0.00462,
+        0.00385,
+        0.00077
+      ],
+      "RBC": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.00282,
+        0.02067,
+        0.03245,
+        0.07864,
+        0.11888,
+        0.10355,
+        0.12575,
+        0.15636,
+        0.1536,
+        0.10704,
+        0.05797,
+        0.02576,
+        0.00902,
+        0.00399,
+        0.00184,
+        0.00098,
+        0.00043,
+        6e-05,
+        6e-05,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        6e-05,
+        0.0,
+        6e-05,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "Platelets": [
+        0.0,
+        0.00184,
+        0.01842,
+        0.19521,
+        0.27624,
+        0.30571,
+        0.12155,
+        0.05157,
+        0.01473,
+        0.00737,
+        0.00368,
+        0.00184,
+        0.00184,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  },
+  "leakage": {
+    "phash_distance_threshold": 4,
+    "pixel_mae_threshold": 6.0,
+    "exact_duplicate_groups": 0,
+    "exact_duplicate_groups_across_splits": 0,
+    "exact_cross_examples": [],
+    "near_duplicate_pairs": 1,
+    "near_duplicate_pairs_across_splits": 0,
+    "near_cross_by_split_pair": {},
+    "near_cross_examples": [],
+    "duplicate_groups": 1,
+    "groups_spanning_splits": 0,
+    "images_in_spanning_groups_by_split": {},
+    "leaky_group_members": []
+  }
+}

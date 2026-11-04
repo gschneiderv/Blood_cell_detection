@@ -1,0 +1,60 @@
+# Fine-tuning experiment for YOLO26 on TXL-PBC.
+# scripts/kaggle_jobs.py embeds this file in the kernel it pushes.
+
+ultralytics_version: "8.4.198"
+names: [WBC, RBC, Platelets]
+
+# Prefer the smaller model unless a larger one beats it by more than this on validation
+# mAP50-95. Smaller gaps are within the noise of a validation set this size.
+selection_margin: 0.005
+
+# All candidates start from COCO-pretrained weights.
+candidates:
+  - name: yolo26s_frozen
+    weights: yolo26s.pt
+    overrides: {freeze: 10}
+  - name: yolo26s_full
+    weights: yolo26s.pt
+  - name: yolo26n_full
+    weights: yolo26n.pt
+  - name: yolo26m_full
+    weights: yolo26m.pt
+
+train_args:
+  # Source images are at most 640 px on a side, and even platelets span about 50 px at
+  # this size, so a larger input would only upsample.
+  imgsz: 640
+  epochs: 100
+  # No early stopping, so that every run reaches the final mosaic-free epochs.
+  # best.pt is still selected by validation mAP50-95.
+  patience: 0
+  batch: 16
+  device: 0
+  workers: 4
+  cache: ram
+  seed: 42
+  deterministic: true
+  pretrained: true
+  # Ultralytics' recipe for small datasets.
+  optimizer: AdamW
+  lr0: 0.001
+  lrf: 0.01
+  cos_lr: true
+  warmup_epochs: 3
+  # Smears have no natural orientation, so vertical flips are valid.
+  fliplr: 0.5
+  flipud: 0.5
+  # Rotating axis-aligned boxes inflates them, which would corrupt tight RBC labels.
+  degrees: 0
+  translate: 0.1
+  scale: 0.5
+  # Stronger colour jitter because stain colour varies strongly between sources.
+  hsv_h: 0.03
+  hsv_s: 0.7
+  hsv_v: 0.4
+  mosaic: 0.5
+  close_mosaic: 10
+  mixup: 0.0
+  copy_paste: 0.0
+  plots: true
+  verbose: false

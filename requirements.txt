@@ -1,0 +1,11 @@
+# Local tooling: data audit, Kaggle job control, monitoring, evaluation and reports.
+# The training itself runs on Kaggle, where the kernel installs its own ultralytics.
+ultralytics==8.4.198
+kaggle==2.2.5
+six==1.17.0
+python-dotenv==1.2.4
+pillow==13.0.0
+numpy==2.4.6
+PyYAML==6.0.3
+ImageHash==4.3.2
+opencv-python-headless==5.0.0.93

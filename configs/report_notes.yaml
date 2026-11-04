@@ -1,0 +1,105 @@
+# Written conclusions for the reports, authored after reviewing the results.
+# scripts/build_reports.py merges these with the computed numbers. Keep every figure here
+# in step with results/ and reports/dataset/ if the model is retrained.
+
+dataset:
+  label_findings:
+    - lead: "Labels started as model predictions."
+      text: >-
+        The TXL-PBC paper describes labelling with YOLOv8n predictions followed by manual review.
+        Scores in these reports therefore measure agreement with those labels, not with an
+        independent expert reading.
+    - lead: "Platelets are unevenly represented."
+      text: >-
+        Labels range from 0.03 per image in BCDD to 1.04 in BCCD. Raabin-WBC and BCDD images are
+        tight crops around one white cell, so some of this gap is probably real, and the final model
+        flags few extra platelets in those two sources. That could also mean it has learned to ignore
+        them. Either way, it saw only 25 and 3 platelet labels from those sources in training, which
+        the performance report shows matters.
+    - lead: "Cut-off cells at image edges are labelled inconsistently."
+      text: >-
+        About half of labelled RBCs (49%) touch an image edge, so these cells are usually labelled, but
+        not always. Some of the model's edge errors, in both directions, are therefore disagreements
+        with the labels rather than clear mistakes.
+    - lead: "A few odd boxes remain."
+      text: >-
+        In the training split as provided, two locations carry both a WBC and an RBC box, and one RBC is
+        boxed twice with slightly different coordinates. These are too few to matter, so they were left in.
+
+training:
+  observations:
+    - lead: "All four candidates finished close together."
+      text: >-
+        Validation mAP50-95 ranges from 0.858 (YOLO26n) to 0.869 (YOLO26m). Extra capacity mostly helps
+        platelets: AP50-95 is 0.802 for YOLO26m against 0.776 to 0.779 for the others.
+    - lead: "YOLO26m was selected by a rule set before training."
+      text: >-
+        It beats YOLO26s by 0.007, above the 0.005 margin. That costs about 3.3 times the compute (75 vs
+        23 GFLOPs) and twice the training time. If speed matters more than this small gain, YOLO26s is a
+        reasonable alternative, and retraining it takes about 27 minutes.
+    - lead: "Freezing the backbone made little difference."
+      text: >-
+        YOLO26s reached 0.860 with its first 10 layers frozen and 0.862 fully trained. Freezing saved about
+        5 minutes.
+    - lead: "There is no sign of overfitting."
+      text: >-
+        Validation losses keep falling until about epoch 90, and the best epochs fall between 67 and 83.
+        More epochs are unlikely to help much.
+    - lead: "NMS beat the NMS-free head on every candidate."
+      text: >-
+        The gap is 0.006 to 0.014 in validation mAP50-95, so all results use NMS, even though YOLO26 is
+        designed to work without it.
+    - lead: "The first evaluation attempt failed, and nothing was retrained."
+      text: >-
+        After training finished, the final evaluation ran out of GPU memory. Ultralytics loads a list of
+        image paths as one batch, and memory from earlier candidates had not been released. Both problems
+        are fixed, which a two-candidate GPU run verified, ending with 0.067 GB still allocated. The saved
+        weights of the selected model were then evaluated in a separate kernel.
+
+performance:
+  banners:
+    - kind: info
+      title: "Strong results, on familiar kinds of images"
+      text: >-
+        Test images come from the same four collections as the training images, so these numbers
+        describe new fields from familiar microscopes and stains. Expect lower performance on images from
+        another laboratory until that has been measured.
+  platelet_fp_note: >-
+    Each crop is a platelet predicted with no matching label. The two dark objects are stain debris, which
+    is a real model error. The others are harder to call: one is cut off by the image edge, and one sits
+    against a white cell. Some similar detections on validation look like real platelets without labels, so
+    someone trained in hematology should review these.
+  baselines:
+    note: >-
+      From the test-split results in the TXL-PBC paper. This is context, not a like-for-like comparison:
+      those models used 320 px input and the original splits, which contain the same-field overlaps removed
+      here.
+    rows:
+      - {model: "YOLOv5s", input: "320 px", split: "Original", map50: 0.980, map50_95: 0.857, wbc: 0.899, rbc: 0.918, platelets: 0.755}
+      - {model: "YOLOv8s", input: "320 px", split: "Original", map50: 0.978, map50_95: 0.864, wbc: 0.899, rbc: 0.918, platelets: 0.774}
+      - {model: "YOLOv11s", input: "320 px", split: "Original", map50: 0.984, map50_95: 0.858, wbc: 0.895, rbc: 0.916, platelets: 0.764}
+  limitations:
+    - >-
+      Not yet tested on a new laboratory. The same-field check can't rule out images of one slide or patient
+      appearing in both training and test, and file names don't record this. Holding out one whole source at a
+      time would measure how the model handles an unseen microscope and stain.
+    - >-
+      Platelet detection depends on the stain. Across validation and test, the model found 88 of 91 labelled
+      platelets in PBC images and 61 of 64 in BCCD, but only 2 of 6 in Raabin-WBC, which had just 25 platelet
+      labels in training. BCDD has no platelets in those splits, so it is untested there.
+    - >-
+      Platelet results rest on few cells. The test split has only 49, which is why their intervals are wide
+      (AP50-95 from 0.778 to 0.872).
+    - >-
+      Stain debris can be mistaken for platelets, as the false-positive crops show.
+    - >-
+      The perfect WBC result covers 131 cells, about one per image and usually large and central, because the
+      source images were selected around white cells. Even with no errors, 131 cells only bound the true miss
+      rate at about 2.3% (95% confidence). Fields with many or atypical white cells have not been tested.
+    - >-
+      It only distinguishes three classes. It doesn't identify white cell subtypes or abnormal cells.
+    - >-
+      Scores measure agreement with labels that began as YOLOv8n predictions, so they can't reveal errors the
+      model shares with those labels.
+    - >-
+      This is a research result. It has not been validated for clinical or diagnostic use.

@@ -1,0 +1,9 @@
+{
+ "python": "3.13.15",
+ "torch": "2.11.0+cu128",
+ "ultralytics": "8.4.198",
+ "cuda": true,
+ "gpu_count": 2,
+ "gpu_name": "Tesla T4",
+ "gpu_memory_gb": 15.6
+}

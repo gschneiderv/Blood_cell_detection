@@ -1,0 +1,32 @@
+# Secrets
+.env
+.env.*
+!.env.example
+kaggle.json
+
+# Datasets stay local (500+ MB, some zips exceed GitHub's 100 MB limit).
+# Anchored to the root so that dashboard/data/ stays tracked.
+/data/
+/build/
+
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Training downloads. Only curated results under results/ and models/ are tracked.
+/runs/
+*.cache
+results/raw/
+kaggle/**/output/
+
+# Pretrained weights that ultralytics downloads into the working directory.
+# Anchored to the root so that the final model in models/ stays tracked.
+/yolo26*.pt
+/yolo11*.pt
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/

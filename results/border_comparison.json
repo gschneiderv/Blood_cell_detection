@@ -1,0 +1,46 @@
+{
+ "without_border": {
+  "val": {
+   "map50": 0.9807,
+   "map50_95": 0.859,
+   "threshold": 0.72,
+   "macro_f1": 0.9528,
+   "rbc_fp": 241,
+   "rbc_fn": 209,
+   "platelet_fp": 2,
+   "platelet_fn": 13
+  },
+  "test": {
+   "map50": 0.9792,
+   "map50_95": 0.8657,
+   "threshold": 0.72,
+   "macro_f1": 0.9456,
+   "rbc_fp": 137,
+   "rbc_fn": 97,
+   "platelet_fp": 3,
+   "platelet_fn": 6
+  }
+ },
+ "with_border": {
+  "val": {
+   "map50": 0.9884,
+   "map50_95": 0.8701,
+   "threshold": 0.47,
+   "macro_f1": 0.9702,
+   "rbc_fp": 103,
+   "rbc_fn": 136,
+   "platelet_fp": 5,
+   "platelet_fn": 6
+  },
+  "test": {
+   "map50": 0.9869,
+   "map50_95": 0.8746,
+   "threshold": 0.47,
+   "macro_f1": 0.9622,
+   "rbc_fp": 62,
+   "rbc_fn": 46,
+   "platelet_fp": 4,
+   "platelet_fn": 4
+  }
+ }
+}

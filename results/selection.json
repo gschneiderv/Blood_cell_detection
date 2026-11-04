@@ -1,0 +1,265 @@
+{
+ "winner": "yolo26m_full",
+ "best_val_map50_95": 0.86943,
+ "margin": 0.005,
+ "results": [
+  {
+   "name": "yolo26s_frozen",
+   "weights": "yolo26s.pt",
+   "overrides": {
+    "freeze": 10
+   },
+   "train_seconds": 1325.6,
+   "params": 9950186,
+   "gflops": 22.75,
+   "val": {
+    "nms": {
+     "map50": 0.98705,
+     "map50_95": 0.86019,
+     "precision": 0.97485,
+     "recall": 0.95263,
+     "per_class": {
+      "WBC": {
+       "precision": 0.99173,
+       "recall": 0.99608,
+       "ap50": 0.99449,
+       "ap50_95": 0.90129
+      },
+      "RBC": {
+       "precision": 0.96327,
+       "recall": 0.96002,
+       "ap50": 0.99018,
+       "ap50_95": 0.90341
+      },
+      "Platelets": {
+       "precision": 0.96954,
+       "recall": 0.90179,
+       "ap50": 0.97649,
+       "ap50_95": 0.77589
+      }
+     }
+    },
+    "nms_free": {
+     "map50": 0.98179,
+     "map50_95": 0.84655,
+     "precision": 0.96255,
+     "recall": 0.94877,
+     "per_class": {
+      "WBC": {
+       "precision": 0.9837,
+       "recall": 0.99216,
+       "ap50": 0.99472,
+       "ap50_95": 0.89125
+      },
+      "RBC": {
+       "precision": 0.95451,
+       "recall": 0.95238,
+       "ap50": 0.98812,
+       "ap50_95": 0.89698
+      },
+      "Platelets": {
+       "precision": 0.94945,
+       "recall": 0.90179,
+       "ap50": 0.96253,
+       "ap50_95": 0.75141
+      }
+     }
+    }
+   },
+   "best_head": "nms",
+   "val_map50_95": 0.86019
+  },
+  {
+   "name": "yolo26s_full",
+   "weights": "yolo26s.pt",
+   "overrides": {},
+   "train_seconds": 1634.7,
+   "params": 9950186,
+   "gflops": 22.75,
+   "val": {
+    "nms": {
+     "map50": 0.98892,
+     "map50_95": 0.86233,
+     "precision": 0.9805,
+     "recall": 0.95417,
+     "per_class": {
+      "WBC": {
+       "precision": 0.99468,
+       "recall": 0.99608,
+       "ap50": 0.99359,
+       "ap50_95": 0.90225
+      },
+      "RBC": {
+       "precision": 0.96774,
+       "recall": 0.95571,
+       "ap50": 0.99068,
+       "ap50_95": 0.90597
+      },
+      "Platelets": {
+       "precision": 0.97907,
+       "recall": 0.91071,
+       "ap50": 0.98248,
+       "ap50_95": 0.77879
+      }
+     }
+    },
+    "nms_free": {
+     "map50": 0.98352,
+     "map50_95": 0.85513,
+     "precision": 0.97131,
+     "recall": 0.94612,
+     "per_class": {
+      "WBC": {
+       "precision": 0.98649,
+       "recall": 0.99216,
+       "ap50": 0.99127,
+       "ap50_95": 0.88748
+      },
+      "RBC": {
+       "precision": 0.95663,
+       "recall": 0.95552,
+       "ap50": 0.98857,
+       "ap50_95": 0.90345
+      },
+      "Platelets": {
+       "precision": 0.9708,
+       "recall": 0.89068,
+       "ap50": 0.97072,
+       "ap50_95": 0.77447
+      }
+     }
+    }
+   },
+   "best_head": "nms",
+   "val_map50_95": 0.86233
+  },
+  {
+   "name": "yolo26n_full",
+   "weights": "yolo26n.pt",
+   "overrides": {},
+   "train_seconds": 1039.4,
+   "params": 2534858,
+   "gflops": 6.03,
+   "val": {
+    "nms": {
+     "map50": 0.98624,
+     "map50_95": 0.85762,
+     "precision": 0.96784,
+     "recall": 0.96398,
+     "per_class": {
+      "WBC": {
+       "precision": 0.99483,
+       "recall": 0.99608,
+       "ap50": 0.99327,
+       "ap50_95": 0.89531
+      },
+      "RBC": {
+       "precision": 0.946,
+       "recall": 0.97445,
+       "ap50": 0.99032,
+       "ap50_95": 0.90207
+      },
+      "Platelets": {
+       "precision": 0.96269,
+       "recall": 0.9214,
+       "ap50": 0.97514,
+       "ap50_95": 0.7755
+      }
+     }
+    },
+    "nms_free": {
+     "map50": 0.98299,
+     "map50_95": 0.84777,
+     "precision": 0.9626,
+     "recall": 0.94724,
+     "per_class": {
+      "WBC": {
+       "precision": 0.98905,
+       "recall": 0.99216,
+       "ap50": 0.99151,
+       "ap50_95": 0.89044
+      },
+      "RBC": {
+       "precision": 0.95171,
+       "recall": 0.94777,
+       "ap50": 0.98686,
+       "ap50_95": 0.8978
+      },
+      "Platelets": {
+       "precision": 0.94704,
+       "recall": 0.90179,
+       "ap50": 0.9706,
+       "ap50_95": 0.75506
+      }
+     }
+    }
+   },
+   "best_head": "nms",
+   "val_map50_95": 0.85762
+  },
+  {
+   "name": "yolo26m_full",
+   "weights": "yolo26m.pt",
+   "overrides": {},
+   "train_seconds": 3312.5,
+   "params": 21777514,
+   "gflops": 74.97,
+   "val": {
+    "nms": {
+     "map50": 0.98841,
+     "map50_95": 0.86943,
+     "precision": 0.97546,
+     "recall": 0.964,
+     "per_class": {
+      "WBC": {
+       "precision": 0.99435,
+       "recall": 0.99608,
+       "ap50": 0.99414,
+       "ap50_95": 0.89805
+      },
+      "RBC": {
+       "precision": 0.96862,
+       "recall": 0.95563,
+       "ap50": 0.99111,
+       "ap50_95": 0.90799
+      },
+      "Platelets": {
+       "precision": 0.96341,
+       "recall": 0.94029,
+       "ap50": 0.97997,
+       "ap50_95": 0.80224
+      }
+     }
+    },
+    "nms_free": {
+     "map50": 0.98341,
+     "map50_95": 0.8633,
+     "precision": 0.97196,
+     "recall": 0.94104,
+     "per_class": {
+      "WBC": {
+       "precision": 0.99271,
+       "recall": 0.99608,
+       "ap50": 0.99367,
+       "ap50_95": 0.89459
+      },
+      "RBC": {
+       "precision": 0.96245,
+       "recall": 0.95371,
+       "ap50": 0.98962,
+       "ap50_95": 0.90455
+      },
+      "Platelets": {
+       "precision": 0.96071,
+       "recall": 0.87334,
+       "ap50": 0.96696,
+       "ap50_95": 0.79076
+      }
+     }
+    }
+   },
+   "best_head": "nms",
+   "val_map50_95": 0.86943
+  }
+ ]
+}
